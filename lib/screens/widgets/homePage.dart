@@ -21,8 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
-      drawer: DrawerBar(),
+      appBar: CustomAppBar(),
       backgroundColor: Colors.white,
       body: ListView(
         children: [

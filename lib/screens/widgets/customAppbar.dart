@@ -50,14 +50,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   onPressed: () {
                     Navigator.of(context).pushNamed(Routemanger.fivePage);
                   },
-                  icon: Icon(Icons.shopping_cart),
+                  icon: const Icon(Icons.shopping_cart),
                 ),
               );
             },
           ),
         ),
       ],
-      title: const Center(child: Text("Student Fest")),
+      title: Text("TRADE HUB"),
     );
   }
 

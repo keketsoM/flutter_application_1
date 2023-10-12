@@ -21,28 +21,31 @@ class ProductCard extends StatelessWidget {
       },
       child: Column(
         children: [
-          Container(
-            height: 165,
-            width: 150,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Image.network(
-                  product.imageUrl,
-                  fit: BoxFit.cover,
-                  height: 100,
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '${product.name}\nR${product.price}',
-                      style:const  TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ],
+          Card(
+            child: Container(
+              height: 156,
+              width: 160,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.network(
+                    product.imageUrl,
+                    fit: BoxFit.fill,
+                    height: 100,
+                    width: 160,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '${product.name}\nR${product.price}',
+                        style: const TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

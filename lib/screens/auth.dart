@@ -90,13 +90,9 @@ class _AuthScreenState extends State<AuthScreen> {
                     right: 20,
                   ),
                   width: 100,
-                  child: const CircleAvatar(
-                      maxRadius: 50,
-                      backgroundImage:
-                          AssetImage("assests/images/StudentFest.png")),
                 ),
               const Text(
-                'Welcome to Student Fest',
+                'Welcome to Trade Hub ',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
               ),
               Card(
@@ -146,7 +142,7 @@ class _AuthScreenState extends State<AuthScreen> {
                             validator: (value) {
                               if (value == null ||
                                   value.trim().isEmpty ||
-                                  !value.contains('@stud.cut.ac.za')) {
+                                  !value.contains('@gmail.com')) {
                                 return "Please enter a vaild email";
                               }
                               return null;
@@ -181,7 +177,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                 style: TextStyle(color: Colors.white),
                               ),
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue),
+                                  backgroundColor: Colors.black),
                             ),
                           if (_islogin)
                             TextButton(
@@ -195,7 +191,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                 },
                                 child: const Text(
                                   'forget password',
-                                  style: TextStyle(color: Colors.blue),
+                                  style: TextStyle(color: Colors.black),
                                 )),
                           if (!_isAuthenticating)
                             TextButton(
@@ -208,7 +204,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                 _islogin
                                     ? 'Create an account'
                                     : 'I already have an account',
-                                style: TextStyle(color: Colors.blue),
+                                style: TextStyle(color: Colors.black),
                               ),
                             ),
                         ],

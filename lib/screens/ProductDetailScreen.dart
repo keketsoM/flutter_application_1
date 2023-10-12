@@ -62,7 +62,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   height: 50,
                   color: Colors.black,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -93,18 +94,18 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               ],
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          //   child: ExpansionTile(
-          //     initiallyExpanded: false,
-          //     title: Text('Delivery Information'),
-          //     children: [
-          //       ListTile(
-          //         title: Text(widget.products.description),
-          //       )
-          //     ],
-          //   ),
-          // ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: ExpansionTile(
+              initiallyExpanded: false,
+              title: Text('Delivery Information'),
+              children: [
+                ListTile(
+                  title: Text(widget.products.description),
+                )
+              ],
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -117,7 +118,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               // IconButton(
               //   onPressed: () {},
               //   icon: Icon(
-              //     Icons.share, 
+              //     Icons.share,
               //     color: Colors.white,
               //   ),
               // ),
@@ -140,7 +141,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       context
                           .read<CartBloc>()
                           .add(CartProductAdded(widget.products));
-                          Navigator.of(context).pushNamed(Routemanger.fivePage);
                     },
                     child: Text(
                       'Add to Cart',

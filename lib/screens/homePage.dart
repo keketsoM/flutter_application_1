@@ -22,7 +22,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-      drawer: DrawerBar(),
       backgroundColor: Colors.white,
       body: ListView(
         children: [
