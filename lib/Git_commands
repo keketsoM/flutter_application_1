@@ -11,9 +11,6 @@ git init
  # 3. Restore a file from previous commit
  git restore -p <commit hash> file
 
- # 4. Create a bramch for every feature
- git branch <name of newbranch>
- git checkout -b <newbranch>
 
  # 5 Merge branch back to main branch
  git merge mainBranch // (you do it whilst inside newBranch)

@@ -9,6 +9,7 @@ import 'package:flutter_application_1/screens/homePage.dart';
 import 'package:flutter_application_1/screens/productGridScreen.dart';
 import 'package:flutter_application_1/screens/report.dart';
 import 'package:flutter_application_1/screens/wishListScreen.dart';
+import 'package:flutter_application_1/searchScreen.dart';
 
 class Routemanger {
   static const String home = '/';
@@ -48,7 +49,7 @@ class Routemanger {
         );
       case sixthPage:
         return MaterialPageRoute(
-          builder: (context) => const MainPage(),
+          builder: (context) => const SearchScreen(),
         );
       case homePage:
         return MaterialPageRoute(

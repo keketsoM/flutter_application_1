@@ -8,7 +8,7 @@ import 'package:flutter_application_1/screens/widgets/drawer.dart';
 import 'package:flutter_application_1/screens/widgets/productRow.dart';
 import 'package:flutter_application_1/screens/widgets/sectionTitle.dart';
 import 'package:flutter_application_1/screens/widgets/shopDepartment.dart';
-import 'widgets/customAppbar.dart';
+import 'package:flutter_application_1/screens/widgets/customAppBar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
