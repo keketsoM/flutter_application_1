@@ -32,9 +32,8 @@ class _BlackBottomNavState extends State<BlackBottomNav> {
                   ScaffoldMessenger.of(context).clearSnackBars();
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("Payment Recieved. Thank you")));
-
-                  Navigator.of(context).popAndPushNamed(widget.pageName);
                 }
+                Navigator.of(context).popAndPushNamed(widget.pageName);
               },
               child: Text(
                 widget.name,

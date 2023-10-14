@@ -72,6 +72,12 @@ class ProductWishListCard extends StatelessWidget {
                           context
                               .read<CartBloc>()
                               .add(CartProductAdded(product));
+                          context
+                              .read<WishListBloc>()
+                              .add(RemoveWishListProduct(product));
+                          final snackBar =
+                              SnackBar(content: Text('item add to the cart!'));
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         },
                         icon: Icon(Icons.trolley),
                       );

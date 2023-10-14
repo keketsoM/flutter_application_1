@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Repository/productRepo.dart';
 import 'package:flutter_application_1/model/category_model.dart';
 import 'package:flutter_application_1/model/product.dart';
 import 'package:flutter_application_1/screens/ProductDetailScreen.dart';
+import 'package:flutter_application_1/screens/api.dart';
 import 'package:flutter_application_1/screens/cartScreen.dart';
 import 'package:flutter_application_1/screens/chat_events.dart';
 import 'package:flutter_application_1/screens/checkoutScreen.dart';
@@ -20,6 +22,7 @@ class Routemanger {
   static const String sixthPage = '/sixthpage';
   static const String eightPage = '/eightpage';
   static const String reportPage = '/sevenpage';
+  static const String apiPage = "/api";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -63,6 +66,11 @@ class Routemanger {
       case reportPage:
         return MaterialPageRoute(
           builder: (context) => const ReportScreen(),
+        );
+
+      case apiPage:
+        return MaterialPageRoute(
+          builder: (context) => const TestApi(),
         );
 
       default:

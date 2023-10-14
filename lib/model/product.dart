@@ -48,7 +48,7 @@ class Product extends Equatable {
         name: 'Acer Nitro 5',
         category: 'Laptop',
         imageUrl:
-            'https://thefoschini.vtexassets.com/arquivos/ids/86952729-800-800?v=638305255463600000&width=800&height=800&aspect=true',
+            'https://thefoschini.vtexassets.com/arquivos/ids/89186739-800-800?v=638326269609030000&width=800&height=800&aspect=true',
         price: 23999.0,
         isPopular: false,
         isRecommended: true,
@@ -83,10 +83,21 @@ class Product extends Equatable {
         imageUrl:
             'https://thefoschini.vtexassets.com/arquivos/ids/82049338-800-800?v=638295967866570000&width=800&height=800&aspect=true',
         price: 13999.0,
-        isPopular: true,
+        isPopular: false,
         isRecommended: true,
         description:
             'The Acer Aspire 5 is a core i3 and comes with 8GB RAM and 256GB SSD Allows for smoother browsing of the internet as well as creates an easier way to complete daily tasks such as sending emails. 14 inch Display Windows Home 10256Gb SSD / 8GB Ram Intel® CoreTM i3-1115G4 processor',
         discount: 25),
+    // Product(
+    //     name: 'Tempo Watch',
+    //     category: 'Watch',
+    //     imageUrl:
+    //         'https://thefoschini.vtexassets.com/arquivos/ids/90672564-800-800?v=638326989826530000&width=800&height=800&aspect=true',
+    //     price: 400.0,
+    //     isPopular: true,
+    //     isRecommended: false,
+    //     description:
+    //         'This stylish Silver Plated men’s bracelet watch features a round case and blue multi fashion dial.',
+    //     discount: 5),
   ];
 }

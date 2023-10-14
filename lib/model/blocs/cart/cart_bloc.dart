@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 
 import 'package:flutter_application_1/model/blocs/cart/cart_event.dart';
@@ -5,50 +7,53 @@ import 'package:flutter_application_1/model/blocs/cart/cart_state.dart';
 import 'package:flutter_application_1/model/cart.dart';
 
 class CartBloc extends Bloc<CartEvent, CartState> {
-  CartBloc() : super(CartLoading());
-
-  Stream<CartState> mapEventToState(
-    CartEvent event,
-  ) async* {
-    if (event is CartStarted) {
-      yield* _mapCartStatedToState();
-    } else if (event is CartProductAdded) {
-      yield* _mapCartProductAddedToState(event, state);
-    } else if (event is CartProductRemove) {
-      yield* _mapCartProductRemoveToState(event, state);
-    }
+  CartBloc() : super(CartLoading()) {
+    on<CartStarted>(_onCartStarted);
+    on<CartProductAdded>(_onCartProductAdded);
+    on<CartProductRemove>(_onCartProductRemove);
   }
-
-  Stream<CartState> _mapCartStatedToState() async* {
-    yield CartLoading();
+  FutureOr<void> _onCartStarted(
+      CartStarted event, Emitter<CartState> emit) async {
+    emit(CartLoading());
     try {
       await Future<void>.delayed(const Duration(seconds: 2));
-      yield CartLoaded();
+      emit(CartLoaded());
     } catch (_) {}
   }
 
-  Stream<CartState> _mapCartProductAddedToState(
-      CartProductAdded event, CartState state) async* {
-    yield CartLoaded();
+  FutureOr<void> _onCartProductAdded(
+      CartProductAdded event, Emitter<CartState> emit) {
+    final state = this.state;
     if (state is CartLoaded) {
       try {
-        yield CartLoaded(
+        emit(
+          CartLoaded(
             cart: Cart(
-                products: List.from(state.cart.products)..add(event.product)));
-      } catch (_) {}
+              products: List.from(state.cart.products)..add(event.product),
+            ),
+          ),
+        );
+      } catch (e) {
+        emit(CartError());
+      }
     }
   }
 
-  Stream<CartState> _mapCartProductRemoveToState(
-      CartProductRemove event, CartState state) async* {
-    yield CartLoaded();
+  FutureOr<void> _onCartProductRemove(
+      CartProductRemove event, Emitter<CartState> emit) {
+    final state = this.state;
     if (state is CartLoaded) {
       try {
-        yield CartLoaded(
+        emit(
+          CartLoaded(
             cart: Cart(
-                products: List.from(state.cart.products)
-                  ..remove(event.product)));
-      } catch (_) {}
+              products: List.from(state.cart.products)..remove(event.product),
+            ),
+          ),
+        );
+      } catch (e) {
+        emit(CartError());
+      }
     }
   }
 }

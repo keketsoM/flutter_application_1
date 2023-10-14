@@ -22,11 +22,11 @@ class _WishListScreenState extends State<WishListScreen> {
       ),
       body: BlocBuilder<WishListBloc, WishListState>(
         builder: (context, state) {
-          // if (state is WishListLoading) {
-          //   return const Center(
-          //     child: CircularProgressIndicator(),
-          //   );
-          // }
+          if (state is WishListLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
           if (state is WishListLoaded) {
             return WishListItem(state: state);
           } else {

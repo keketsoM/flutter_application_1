@@ -84,8 +84,8 @@ class _CartListState extends State<CartList> {
         },
       ),
       bottomNavigationBar: const BlackBottomNav(
-        name: 'CheckOut',
-        pageName: Routemanger.eightPage,
+        name: 'pay Now',
+        pageName: Routemanger.homePage,
       ),
     );
   }

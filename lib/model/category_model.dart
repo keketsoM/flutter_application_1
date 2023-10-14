@@ -17,7 +17,7 @@ class Category extends Equatable {
     const Category(
       name: "Phone",
       imageUrl:
-          'https://thefoschini.vtexassets.com/arquivos/ids/86923697-800-800?v=638305159156970000&width=800&height=800&aspect=true',
+          'https://thefoschini.vtexassets.com/arquivos/ids/91013519-800-800?v=638327268540200000&width=800&height=800&aspect=true',
     ),
     const Category(
       name: "Fragrance",
@@ -35,7 +35,7 @@ class Category extends Equatable {
           'https://thefoschini.vtexassets.com/arquivos/ids/82235033-800-800?v=638296047163970000&width=800&height=800&aspect=true',
     ),
     const Category(
-      name: "Watches",
+      name: "Watch",
       imageUrl:
           'https://thefoschini.vtexassets.com/arquivos/ids/68468651-800-800?v=638265768839400000&width=800&height=800&aspect=true',
     )
