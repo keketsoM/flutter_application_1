@@ -41,7 +41,7 @@ class ProductWishListCard extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(15),
                           child: Text(
-                            '${product.name}\n${product.price}',
+                            '${product.productName}\n${product.price}',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),

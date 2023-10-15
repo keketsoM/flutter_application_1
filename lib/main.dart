@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/model/blocs/Api/api_bloc.dart';
 import 'package:flutter_application_1/model/blocs/cart/cart_bloc.dart';
 import 'package:flutter_application_1/model/blocs/cart/cart_event.dart';
 import 'package:flutter_application_1/model/blocs/wishList/wishList_bloc.dart';
@@ -47,6 +48,10 @@ class MyApp extends StatelessWidget {
                 BlocProvider(
                     create: (_) => WishListBloc()..add(StartWishList())),
                 BlocProvider(create: (_) => CartBloc()..add(CartStarted())),
+                BlocProvider(
+                  create: (context) =>
+                      ApiProductBloc()..add(ApiProductStarted()),
+                )
               ],
               child: const MaterialApp(
                 debugShowCheckedModeBanner: false,

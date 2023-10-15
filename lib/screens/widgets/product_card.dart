@@ -38,7 +38,7 @@ class ProductCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '${product.name}\nR${product.price}',
+                        '${product.productName}\nR${product.price}',
                         style: const TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),

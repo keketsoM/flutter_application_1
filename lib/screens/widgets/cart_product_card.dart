@@ -27,7 +27,7 @@ class CartProductCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(product.name),
+                Text(product.productName),
                 Text("R${product.price}"),
               ],
             ),

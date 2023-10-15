@@ -1,19 +1,39 @@
 import 'package:equatable/equatable.dart';
 
 class Product extends Equatable {
-  final String name;
+  final int productId;
+  final String productName;
+  final String productBrand;
   final String category;
-  final String description;
+  final String productType;
+  final String productCount;
+  final String productDescription;
   final String imageUrl;
   final double price;
+  final String warranty;
+  final String boxItems;
+  final DateTime dateCreated;
   final int discount;
   final bool isPopular;
   final bool isRecommended;
+  final int? vendorId;
+  final String vendor;
+  final String orders;
 
   Product(
-      {required this.name,
+      {required this.productId,
+      required this.productBrand,
+      required this.productType,
+      required this.productCount,
+      required this.warranty,
+      required this.boxItems,
+      required this.dateCreated,
+      required this.vendorId,
+      required this.vendor,
+      required this.orders,
+      required this.productName,
       required this.category,
-      required this.description,
+      required this.productDescription,
       required this.imageUrl,
       required this.price,
       required this.isPopular,
@@ -22,82 +42,133 @@ class Product extends Equatable {
   @override
   // TODO: implement props
   List<Object?> get props => [
-        name,
+        productId,
+        productBrand,
+        productType,
+        productCount,
+        warranty,
+        boxItems,
+        dateCreated,
+        vendorId,
+        vendor,
+        orders,
+        productName,
         category,
-        description,
+        productDescription,
         imageUrl,
-        isPopular,
         price,
+        isPopular,
         isRecommended,
-        discount,
+        discount
       ];
+  factory Product.fromJson(Map<String, dynamic> json) => Product(
+        productId: json["id"],
+        productName: json["productName"],
+        productBrand: json["productBrand"],
+        productDescription: json["productDescription"],
+        category: json["productCategory"],
+        productType: json["productType"],
+        productCount: json["productCount"],
+        price: json["productPrice"],
+        imageUrl: json["imageLink"],
+        warranty: json["warranty"],
+        boxItems: json["boxItems"],
+        dateCreated: DateTime.parse(json["dateCreated"]),
+        vendor: json["vendor"],
+        vendorId: json["vendorId"],
+        orders: json["isPopular"],
+        isPopular: json["orders"],
+        isRecommended: json["isRecommended"],
+        discount: json["discount"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "id": productId,
+        "productName": productName,
+        "productBrand": productBrand,
+        "productDescription": productDescription,
+        "productCategory": category,
+        "productType": productType,
+        "productCount": productCount,
+        "productPrice": price,
+        "imageLink": imageUrl,
+        "warranty": warranty,
+        "boxItems": boxItems,
+        "dateCreated": dateCreated.toIso8601String(),
+        "vendor": vendor,
+        "vendorId": vendorId,
+        "orders": orders,
+        "isPopular": isPopular,
+        "isRecommended": isRecommended,
+        "discount": discount,
+      };
 
   static List<Product> products = [
     Product(
-        name: 'Huawei Matebook\n D14',
-        category: 'Laptop',
-        imageUrl:
-            'https://thefoschini.vtexassets.com/arquivos/ids/86967229-800-800?v=638305309298800000&width=800&height=800&aspect=true',
-        price: 13999.0,
-        isPopular: true,
-        isRecommended: true,
-        description:
-            'Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up. Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up.',
-        discount: 20),
+      category: 'Laptop',
+      imageUrl:
+          'https://media.takealot.com/covers_images/b0a8f3d22e714b83a309109c436d352f/s-zoom.file',
+      price: 13999.0,
+      isPopular: true,
+      isRecommended: true,
+      productDescription:
+          'Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up. Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up.',
+      discount: 20,
+      productId: 1,
+      productBrand: 'Huawei',
+      productType: 'Laptop',
+      productCount: '0',
+      warranty: '1',
+      boxItems: 'charger and laptop',
+      dateCreated: DateTime.now(),
+      vendorId: 1,
+      vendor: 'keke',
+      orders: '9',
+      productName: 'Huawei Matebook\n D14',
+    ),
     Product(
-        name: 'Acer Nitro 5',
-        category: 'Laptop',
-        imageUrl:
-            'https://thefoschini.vtexassets.com/arquivos/ids/89186739-800-800?v=638326269609030000&width=800&height=800&aspect=true',
-        price: 23999.0,
-        isPopular: false,
-        isRecommended: true,
-        description:
-            'Power. Performance. Playtime! Hit Turbo and go full speed. Reign over the gaming world with the latest processors giving you superior gaming performance while delivering flexibility to multitask. Explore games in greater detail with a range of resolutions high-speed displays.Web Browsing, Access to banking services, Education and Studying, Business Meeting, Marketing, Companies, Gaming, Data Storage, Searching Jobs, browsing through social media, Sending & Receiving Emails.',
-        discount: 79),
+      category: 'Laptop',
+      imageUrl:
+          'https://media.takealot.com/covers_images/b0a8f3d22e714b83a309109c436d352f/s-zoom.file',
+      price: 13999.0,
+      isPopular: true,
+      isRecommended: true,
+      productDescription:
+          'Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up. Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up.',
+      discount: 20,
+      productId: 1,
+      productBrand: 'Huawei',
+      productType: 'Laptop',
+      productCount: '0',
+      warranty: '1',
+      boxItems: 'charger and laptop',
+      dateCreated: DateTime.now(),
+      vendorId: 1,
+      vendor: 'keke',
+      orders: '9',
+      productName: 'Huawei Matebook\n D14',
+    ),
     Product(
-        name: 'Lenovo Legion 5 ',
-        category: 'Laptop',
-        imageUrl:
-            'https://thefoschini.vtexassets.com/arquivos/ids/82023812-800-800?v=638295957559370000&width=800&height=800&aspect=true',
-        price: 38999.0,
-        isPopular: true,
-        isRecommended: true,
-        description:
-            'With revolutionary performance and efficiency cores, 12th Gen Intel® Core™ processors enable seamless streaming, editing, gaming, and recording, delivering responsiveness where you need it most. Intel® Thread Director and up to Intel® WiFi 6E support keep everything lag-free. At the same time, Intel® Turbo Boost Technology boosts framerate in peak loads, so nothing slows you down. *6GHz WiFi 6E operation is dependent on the support of the operating system, routers/APs/gateways that support WiFi 6E, along with the regional regulatory certifications and spectrum allocation.',
-        discount: 44),
-    Product(
-        name: 'Lenovo Yoga\nSlim 7 Pro',
-        category: 'Laptop',
-        imageUrl:
-            'https://thefoschini.vtexassets.com/arquivos/ids/87027750-800-800?v=638305581928770000&width=800&height=800&aspect=true',
-        price: 38999.0,
-        isPopular: true,
-        isRecommended: true,
-        description:
-            'Be free to perform anywhere with up to Intel® Evo™, featuring 12th Gen Intel® Core™ H Series Processors, distributing performance where you need it most. And with Lenovo X Power, the Yoga Slim 7i Pro X lets you leverage specific scenario tuning to push beyond benchmarks, turbo matrix optimizations for maximum CPU and GPU performance, and fine-tuned industry-leading hardware.',
-        discount: 54),
-    Product(
-        name: 'Acer Aspire i3',
-        category: 'Laptop',
-        imageUrl:
-            'https://thefoschini.vtexassets.com/arquivos/ids/82049338-800-800?v=638295967866570000&width=800&height=800&aspect=true',
-        price: 13999.0,
-        isPopular: false,
-        isRecommended: true,
-        description:
-            'The Acer Aspire 5 is a core i3 and comes with 8GB RAM and 256GB SSD Allows for smoother browsing of the internet as well as creates an easier way to complete daily tasks such as sending emails. 14 inch Display Windows Home 10256Gb SSD / 8GB Ram Intel® CoreTM i3-1115G4 processor',
-        discount: 25),
-    // Product(
-    //     name: 'Tempo Watch',
-    //     category: 'Watch',
-    //     imageUrl:
-    //         'https://thefoschini.vtexassets.com/arquivos/ids/90672564-800-800?v=638326989826530000&width=800&height=800&aspect=true',
-    //     price: 400.0,
-    //     isPopular: true,
-    //     isRecommended: false,
-    //     description:
-    //         'This stylish Silver Plated men’s bracelet watch features a round case and blue multi fashion dial.',
-    //     discount: 5),
+      category: 'Laptop',
+      imageUrl:
+          'https://media.takealot.com/covers_images/b0a8f3d22e714b83a309109c436d352f/s-zoom.file',
+      isPopular: true,
+      isRecommended: true,
+      productDescription:
+          'Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up. Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up.',
+      discount: 20,
+      productId: 1,
+      productBrand: 'Huawei',
+      productType: 'Laptop',
+      productCount: '0',
+      warranty: '1',
+      boxItems: 'charger and laptop',
+      dateCreated: DateTime.now(),
+      vendorId: 1,
+      vendor: 'keke',
+      orders: '9',
+      productName: 'Huawei Matebook\n D14',
+      price: 200.0,
+    )
   ];
 }

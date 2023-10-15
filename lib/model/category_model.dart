@@ -27,12 +27,12 @@ class Category extends Equatable {
     const Category(
       name: "Clothes",
       imageUrl:
-          'https://thefoschini.vtexassets.com/arquivos/ids/77624749-800-800?v=638288153067800000&width=800&height=800&aspect=true',
+          'https://media.takealot.com/covers_images/ace7f49dc08849a89fb33149662eb309/s-zoom.file',
     ),
     const Category(
       name: "Laptop",
       imageUrl:
-          'https://thefoschini.vtexassets.com/arquivos/ids/82235033-800-800?v=638296047163970000&width=800&height=800&aspect=true',
+          'https://media.takealot.com/covers_images/129d0967c13a469fad090debcf27b690/s-zoom.file',
     ),
     const Category(
       name: "Watch",

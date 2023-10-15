@@ -25,10 +25,10 @@ class _SearchScreenState extends State<SearchScreen> {
         if (keyword.isEmpty) {
           Text("no iteam found");
         } else {
-          filteredItem = Product.products
-              .where((element) =>
-                  element.name.toLowerCase().contains(keyword.toLowerCase()))
-              .toList();
+          // filteredItem = Product.products
+          //     .where((element) =>
+          //         element.name.toLowerCase().contains(keyword.toLowerCase()))
+          //     .toList();
         }
       },
     );
@@ -38,7 +38,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    filteredItem = Product.products.toList();
+    //filteredItem = Product.products.toList();
     super.initState();
   }
 

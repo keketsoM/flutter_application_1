@@ -32,10 +32,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
           case 1:
             Navigator.of(context).popAndPushNamed(Routemanger.sixthPage);
             break;
-          // case 2:
-          //   Navigator.of(context).popAndPushNamed(Routemanger.homePage);
-          //   break;
           case 2:
+            Navigator.of(context).popAndPushNamed(Routemanger.chatScreen);
+            break;
+          case 3:
             _firebase.signOut();
             break;
         }
@@ -54,11 +54,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
           icon: Icon(Icons.search_outlined),
           label: 'Search',
         ),
-        // BottomNavigationBarItem(
-        //   backgroundColor: Colors.black,
-        //   icon: Icon(Icons.chat),
-        //   label: 'chat',
-        // ),
+        BottomNavigationBarItem(
+          backgroundColor: Colors.black,
+          icon: Icon(Icons.chat),
+          label: 'chat',
+        ),
         BottomNavigationBarItem(
             backgroundColor: Colors.black,
             icon: Icon(Icons.exit_to_app),

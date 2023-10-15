@@ -27,7 +27,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               },
               icon: Icon(Icons.shopping_bag_outlined))
         ],
-        title: Text(widget.products.name),
+        // title: Text(widget.products.name),
       ),
       body: ListView(
         children: [
@@ -67,10 +67,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          widget.products.name,
-                          style: TextStyle(color: Colors.white),
-                        ),
+                        //   Text(
+                        // widget.products.name,
+                        //   style: TextStyle(color: Colors.white),
+                        // ),
                         Text(
                           'R${widget.products.price}',
                           style: TextStyle(color: Colors.white),
@@ -88,9 +88,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               initiallyExpanded: false,
               title: Text('Product Information'),
               children: [
-                ListTile(
-                  title: Text(widget.products.description),
-                )
+                // ListTile(
+                //   title: Text(widget.products.description),
+                // )
               ],
             ),
           ),
@@ -100,9 +100,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               initiallyExpanded: false,
               title: Text('Delivery Information'),
               children: [
-                ListTile(
-                  title: Text(widget.products.description),
-                )
+                // ListTile(
+                //   title: Text(widget.products.description),
+                // )
               ],
             ),
           ),
@@ -115,13 +115,13 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // IconButton(
-              //   onPressed: () {},
-              //   icon: Icon(
-              //     Icons.share,
-              //     color: Colors.white,
-              //   ),
-              // ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.share,
+                  color: Colors.white,
+                ),
+              ),
               IconButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed(Routemanger.fourthPage);

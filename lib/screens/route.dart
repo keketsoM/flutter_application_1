@@ -5,6 +5,7 @@ import 'package:flutter_application_1/model/product.dart';
 import 'package:flutter_application_1/screens/ProductDetailScreen.dart';
 import 'package:flutter_application_1/screens/api.dart';
 import 'package:flutter_application_1/screens/cartScreen.dart';
+import 'package:flutter_application_1/screens/chat.dart';
 import 'package:flutter_application_1/screens/chat_events.dart';
 import 'package:flutter_application_1/screens/checkoutScreen.dart';
 import 'package:flutter_application_1/screens/homePage.dart';
@@ -22,6 +23,7 @@ class Routemanger {
   static const String sixthPage = '/sixthpage';
   static const String eightPage = '/eightpage';
   static const String reportPage = '/sevenpage';
+  static const String chatScreen = '/chatScreen';
   static const String apiPage = "/api";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -54,10 +56,10 @@ class Routemanger {
         return MaterialPageRoute(
           builder: (context) => const SearchScreen(),
         );
-      // case sevenPage:
-      // return MaterialPageRoute(
-      //   builder: (context) => const chatScreen(),
-      // );
+      case chatScreen:
+        return MaterialPageRoute(
+          builder: (context) => const MainPage(),
+        );
       case eightPage:
         return MaterialPageRoute(
           builder: (context) => CheckoutScreen(),
