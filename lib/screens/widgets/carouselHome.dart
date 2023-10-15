@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/blocs/wishList/wishList_bloc.dart';
-import 'package:flutter_application_1/model/blocs/wishList/wishList_event.dart';
-import 'package:flutter_application_1/model/blocs/wishList/wishList_state.dart';
+import 'package:flutter_application_1/model/models.dart';
 import 'package:flutter_application_1/model/category_model.dart';
-import 'package:flutter_application_1/model/product.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CarouselCat extends StatelessWidget {

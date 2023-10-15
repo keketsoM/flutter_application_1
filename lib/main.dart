@@ -1,11 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/model/blocs/Api/api_bloc.dart';
-import 'package:flutter_application_1/model/blocs/cart/cart_bloc.dart';
-import 'package:flutter_application_1/model/blocs/cart/cart_event.dart';
-import 'package:flutter_application_1/model/blocs/wishList/wishList_bloc.dart';
-import 'package:flutter_application_1/model/blocs/wishList/wishList_event.dart';
+import 'package:flutter_application_1/model/models.dart';
 import 'package:flutter_application_1/screens/login_screen/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_application_1/route_mananger/route.dart';

@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:flutter_application_1/model/cart.dart';
+part of 'cart_bloc.dart';
 
 abstract class CartState extends Equatable {
   const CartState();

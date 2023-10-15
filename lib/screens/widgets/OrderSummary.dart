@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/blocs/cart/cart_bloc.dart';
-import 'package:flutter_application_1/model/blocs/cart/cart_state.dart';
-import 'package:flutter_application_1/model/cart.dart';
+import 'package:flutter_application_1/model/models.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Order_Summary extends StatelessWidget {

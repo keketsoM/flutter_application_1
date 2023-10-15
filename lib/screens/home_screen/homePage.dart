@@ -1,14 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/category_model.dart';
-import 'package:flutter_application_1/model/product.dart';
-import 'package:flutter_application_1/screens/widgets/bottomNavBar.dart';
-import 'package:flutter_application_1/screens/widgets/carouselHome.dart';
-import 'package:flutter_application_1/screens/widgets/drawer.dart';
-import 'package:flutter_application_1/screens/widgets/productRow.dart';
-import 'package:flutter_application_1/screens/widgets/sectionTitle.dart';
-import 'package:flutter_application_1/screens/widgets/shopDepartment.dart';
-import 'package:flutter_application_1/screens/widgets/customAppBar.dart';
+import 'package:flutter_application_1/model/models.dart';
+import 'package:flutter_application_1/screens/widgets/common_widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_application_1/Repository/productRepo.dart';
-import 'package:flutter_application_1/model/blocs/Api/api_bloc.dart';
+import 'package:flutter_application_1/model/models.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TestApi extends StatefulWidget {

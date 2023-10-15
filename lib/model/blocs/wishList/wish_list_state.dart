@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:flutter_application_1/model/wishList.dart';
+part of 'wish_list_bloc.dart';
 
 abstract class WishListState extends Equatable {
   const WishListState();
