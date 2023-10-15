@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/chat.dart';
-import 'package:flutter_application_1/screens/events.dart';
-import 'package:flutter_application_1/screens/route.dart';
+import 'package:flutter_application_1/screens/chat_screen/chat.dart';
+import 'package:flutter_application_1/screens/events_screen/events.dart';
+import 'package:flutter_application_1/route_mananger/route.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});

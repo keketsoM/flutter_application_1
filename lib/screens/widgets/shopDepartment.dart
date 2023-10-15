@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/category_model.dart';
-import 'package:flutter_application_1/screens/route.dart';
+import 'package:flutter_application_1/route_mananger/route.dart';
 
 class ShopDep extends StatefulWidget {
   const ShopDep({super.key, required this.categories});

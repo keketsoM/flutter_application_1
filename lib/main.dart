@@ -6,10 +6,10 @@ import 'package:flutter_application_1/model/blocs/cart/cart_bloc.dart';
 import 'package:flutter_application_1/model/blocs/cart/cart_event.dart';
 import 'package:flutter_application_1/model/blocs/wishList/wishList_bloc.dart';
 import 'package:flutter_application_1/model/blocs/wishList/wishList_event.dart';
-import 'package:flutter_application_1/screens/auth.dart';
+import 'package:flutter_application_1/screens/login_screen/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_application_1/screens/route.dart';
-import 'package:flutter_application_1/screens/splash.dart';
+import 'package:flutter_application_1/route_mananger/route.dart';
+import 'package:flutter_application_1/screens/widgets/splash.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'firebase_options.dart';
 

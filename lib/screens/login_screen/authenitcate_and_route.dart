@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class streamBuilder extends StatelessWidget {
-  const streamBuilder({
+class AuthenticateAndRoute extends StatelessWidget {
+  const AuthenticateAndRoute({
     super.key,
     required this.user,
   });

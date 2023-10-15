@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/streamBuilder.dart';
+import 'package:flutter_application_1/screens/login_screen/authenitcate_and_route.dart';
 
 class PersonProfile extends StatefulWidget {
   const PersonProfile({super.key});
@@ -20,7 +20,7 @@ class _PersonProfileState extends State<PersonProfile> {
       appBar: AppBar(centerTitle: true,
         title: const Text("Account details")),
       body: SingleChildScrollView(
-        child: streamBuilder(user: user),
+        child: AuthenticateAndRoute(user: user),
       ),
     );
   }

@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Repository/productRepo.dart';
 import 'package:flutter_application_1/model/category_model.dart';
 import 'package:flutter_application_1/model/product.dart';
-import 'package:flutter_application_1/screens/ProductDetailScreen.dart';
+import 'package:flutter_application_1/screens/product_details_screen/ProductDetailScreen.dart';
 import 'package:flutter_application_1/screens/api.dart';
-import 'package:flutter_application_1/screens/cartScreen.dart';
-import 'package:flutter_application_1/screens/chat.dart';
-import 'package:flutter_application_1/screens/chat_events.dart';
-import 'package:flutter_application_1/screens/checkoutScreen.dart';
-import 'package:flutter_application_1/screens/homePage.dart';
-import 'package:flutter_application_1/screens/productGridScreen.dart';
-import 'package:flutter_application_1/screens/report.dart';
-import 'package:flutter_application_1/screens/wishListScreen.dart';
-import 'package:flutter_application_1/searchScreen.dart';
+import 'package:flutter_application_1/screens/cart_screen/cartScreen.dart';
+import 'package:flutter_application_1/screens/chat_screen/chat_events.dart';
+import 'package:flutter_application_1/screens/checkout_screen/checkoutScreen.dart';
+import 'package:flutter_application_1/screens/home_screen/homePage.dart';
+import 'package:flutter_application_1/screens/search_screen/productGridScreen.dart';
+import 'package:flutter_application_1/screens/reports_screen/report.dart';
+import 'package:flutter_application_1/screens/wish_list_screen/wishListScreen.dart';
+import 'package:flutter_application_1/screens/search_screen/searchScreen.dart';
 
 class Routemanger {
   static const String homePage = '/';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/blocs/cart/cart_bloc.dart';
 import 'package:flutter_application_1/model/blocs/cart/cart_state.dart';
 import 'package:flutter_application_1/model/product.dart';
-import 'package:flutter_application_1/screens/route.dart';
+import 'package:flutter_application_1/route_mananger/route.dart';
 import 'package:flutter_application_1/screens/widgets/bottomNavBar.dart';
 import 'package:flutter_application_1/screens/widgets/drawer.dart';
 import 'package:flutter_application_1/screens/widgets/product_card.dart';

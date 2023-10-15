@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/reset_password.dart';
+import 'package:flutter_application_1/screens/login_screen/reset_password.dart';
 import 'package:flutter_application_1/screens/widgets/user_image_picker.dart';
 
 final _firebase = FirebaseAuth.instance;
