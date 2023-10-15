@@ -6,13 +6,10 @@ on:
   push:
     branches: [master]
     paths-ignore:
-      - '**'/*.md'
+      - '**/*.md'
   
   pull_request:
     branches: [master]
-
-workflow_dispatch:
-
 
 jobs:
   build:
@@ -27,6 +24,6 @@ jobs:
       - uses: subosito/flutter-actions@v2
         with:
             channel: stable
-    - run: flutter pub get
-    - run: flutter build apk
+      - run: flutter pub get
+      - run: flutter build apk
 
