@@ -1,49 +1,52 @@
 import 'package:equatable/equatable.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'product.g.dart';
+
+@JsonSerializable()
 class Product extends Equatable {
-  final int productId;
+  final int id;
   final String productName;
   final String productBrand;
-  final String category;
+  final String productCategory;
   final String productType;
   final int productCount;
   final String productDescription;
-  final String imageUrl;
-  final int price;
-  final String? warranty;
-  final String? boxItems;
+  final String imageLink;
+  final double productPrice;
+  final String warranty;
+  final String boxItems;
   final String dateCreated;
-  // final int discount;
-  // final bool isPopular;
-  // final bool isRecommended;
+  final double discount;
+  final bool isPopular;
+  final bool isRecommmened;
   final int vendorId;
   final String? vendor;
   final String? orders;
 
-  Product({
-    required this.productId,
-    required this.productBrand,
-    required this.productType,
-    required this.productCount,
-    required this.warranty,
-    required this.boxItems,
-    required this.dateCreated,
-    required this.vendorId,
-    required this.vendor,
-    required this.orders,
-    required this.productName,
-    required this.category,
-    required this.productDescription,
-    required this.imageUrl,
-    required this.price,
-    // required this.isPopular,
-    // required this.isRecommended,
-    // required this.discount
-  });
+  Product(
+      {required this.id,
+      required this.productBrand,
+      required this.productType,
+      required this.productCount,
+      required this.warranty,
+      required this.boxItems,
+      required this.dateCreated,
+      required this.vendorId,
+      required this.vendor,
+      required this.orders,
+      required this.productName,
+      required this.productCategory,
+      required this.productDescription,
+      required this.imageLink,
+      required this.productPrice,
+      required this.isPopular,
+      required this.isRecommmened,
+      required this.discount});
   @override
   // TODO: implement props
-  List<Object?> get props => [
-        productId,
+  List<Object> get props => [
+        id,
         productBrand,
         productType,
         productCount,
@@ -51,116 +54,20 @@ class Product extends Equatable {
         boxItems,
         dateCreated,
         vendorId,
-        vendor,
-        orders,
+        vendor ?? "No Vendor",
+        orders ?? "No Orders",
         productName,
-        category,
+        productCategory,
         productDescription,
-        imageUrl,
-        price,
-        // isPopular,
-        // isRecommended,
-        // discount
+        imageLink,
+        productPrice,
+        isPopular,
+        isRecommmened,
+        discount
       ];
-  factory Product.fromJson(Map<String, dynamic> json) => Product(
-        productId: json["id"],
-        productName: json["productName"],
-        productBrand: json["productBrand"],
-        productDescription: json["productDescription"],
-        category: json["productCategory"],
-        productType: json["productType"],
-        productCount: json["productCount"],
-        price: json["productPrice"],
-        imageUrl: json["imageLink"],
-        warranty: json["warranty"],
-        boxItems: json["boxItems"],
-        dateCreated: json["dateCreated"],
-        vendor: json["vendor"],
-        vendorId: json["vendorId"],
-        orders: json["isPopular"],
-        // isPopular: json["orders"],
-        // isRecommended: json["isRecommended"],
-        // discount: json["discount"],
-      );
 
-  Map<String, dynamic> toJson() => {
-        "id": productId,
-        "productName": productName,
-        "productBrand": productBrand,
-        "productDescription": productDescription,
-        "productCategory": category,
-        "productType": productType,
-        "productCount": productCount,
-        "productPrice": price,
-        "imageLink": imageUrl,
-        "warranty": warranty,
-        "boxItems": boxItems,
-        "dateCreated": dateCreated,
-        "vendor": vendor,
-        "vendorId": vendorId,
-        "orders": orders,
-        // "isPopular": isPopular,
-        // "isRecommended": isRecommended,
-        // "discount": discount,
-      };
+  factory Product.fromJson(Map<String, dynamic> json) =>
+      _$ProductFromJson(json);
 
-  // static List<Product> products = [
-  //   Product(
-  //     category: 'Laptop',
-  //     imageUrl:
-  //         'https://media.takealot.com/covers_images/dacbcaf4b2964f368cad235d97264996/s-zoom.file',
-  //     price: 13999,
-  //     productDescription:
-  //         'Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up. Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up.',
-  //     productId: 1,
-  //     productBrand: 'Huawei',
-  //     productType: 'Laptop',
-  //     productCount: 0,
-  //     warranty: '1',
-  //     boxItems: 'charger and laptop',
-  //     dateCreated: "2021",
-  //     vendorId: 1,
-  //     vendor: 'keke',
-  //     orders: '9',
-  //     productName: 'Huawei Matebook\n D14',
-  //   ),
-  //   Product(
-  //     category: 'Laptop',
-  //     imageUrl:
-  //         'https://media.takealot.com/covers_images/dacbcaf4b2964f368cad235d97264996/s-zoom.file',
-  //     price: 13999,
-  //     productDescription:
-  //         'Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up. Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up.',
-  //     productId: 1,
-  //     productBrand: 'Huawei',
-  //     productType: 'Laptop',
-  //     productCount: 0,
-  //     warranty: '1',
-  //     boxItems: 'charger and laptop',
-  //     dateCreated: "2021",
-  //     vendorId: 1,
-  //     vendor: 'keke',
-  //     orders: '9',
-  //     productName: 'Huawei Matebook\n D14',
-  //   ),
-  //   Product(
-  //     category: 'Laptop',
-  //     imageUrl:
-  //         'https://media.takealot.com/covers_images/dacbcaf4b2964f368cad235d97264996/s-zoom.file',
-  //     productDescription:
-  //         'Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up. Enjoy every look of HUAWEI MateBook D 14 thanks to the IPS anti-glare 14" HUAWEI FullView Display1 and 16:9 aspect ratio. With Full-HD 1920 × 1080 resolution, every image bursts with detail and clarity. For a better viewing experience every time you open up.',
-  //     productId: 1,
-  //     productBrand: 'Huawei',
-  //     productType: 'Laptop',
-  //     productCount: 0,
-  //     warranty: '1',
-  //     boxItems: 'charger and laptop',
-  //     dateCreated: "2021",
-  //     vendorId: 1,
-  //     vendor: 'keke',
-  //     orders: '9',
-  //     productName: 'Huawei Matebook\n D14',
-  //     price: 200,
-  //   )
-  // ];
+  Map<String, dynamic> toJson() => _$ProductToJson(this);
 }

@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
               ],
               child: const MaterialApp(
                 debugShowCheckedModeBanner: false,
-                initialRoute: Routemanger.apiPage,
+                initialRoute: Routemanger.homePage,
                 onGenerateRoute: Routemanger.generateRoute,
               ),
             );

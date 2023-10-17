@@ -97,28 +97,42 @@ class _SearchScreenState extends State<SearchScreen> {
         title: Center(child: const Text("Student Fest")),
       ),
       drawer: DrawerBar(),
-      body: GridView.builder(
-        padding: const EdgeInsets.symmetric(
-          vertical: 16.0,
-          horizontal: 8.0,
-        ),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, childAspectRatio: 1),
-        itemCount: filteredItem.length,
-        itemBuilder: (context, index) {
-          return Center(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                bottom: 20,
-              ),
-              child: ProductCard(
-                product: filteredItem[index],
-                widthfactor: 2.5,
-              ),
-            ),
+      body: BlocBuilder<ApiProductBloc, ApiProductState>(
+          builder: (context, state) {
+        if (state is ProductApiLoadingState) {
+          return const Center(
+            child: CircularProgressIndicator(),
           );
-        },
-      ),
+        }
+        if (state is ProductApiFetchingSuccessfulState) {
+          return GridView.builder(
+            padding: const EdgeInsets.symmetric(
+              vertical: 16.0,
+              horizontal: 8.0,
+            ),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, childAspectRatio: 1),
+            itemCount: filteredItem.length,
+            itemBuilder: (context, index) {
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 20,
+                  ),
+                  child: ProductCard(
+                    product: filteredItem[index],
+                    widthfactor: 2.5,
+                    index: index,
+                    state: state,
+                  ),
+                ),
+              );
+            },
+          );
+        } else {
+          return Text("somthing went wrong");
+        }
+      }),
       bottomNavigationBar: BottomNavBar(),
     );
   }

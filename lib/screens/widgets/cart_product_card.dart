@@ -12,7 +12,7 @@ class CartProductCard extends StatelessWidget {
       child: Row(
         children: [
           Image.network(
-            product.imageUrl,
+            product.imageLink,
             width: 100,
             height: 80,
             fit: BoxFit.cover,
@@ -25,7 +25,7 @@ class CartProductCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(product.productName),
-                Text("R${product.price}"),
+                Text("R${product.productPrice}"),
               ],
             ),
           ),

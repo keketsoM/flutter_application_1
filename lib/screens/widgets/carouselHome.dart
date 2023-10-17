@@ -16,7 +16,7 @@ class CarouselCat extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             Image.network(
-                product == null ? category!.imageUrl : product!.imageUrl,
+                product == null ? category!.imageUrl : product!.imageLink,
                 fit: BoxFit.fill,
                 width: 1000.0),
             Positioned(

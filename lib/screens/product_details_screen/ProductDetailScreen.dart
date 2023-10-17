@@ -70,7 +70,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         //   style: TextStyle(color: Colors.white),
                         // ),
                         Text(
-                          'R${widget.products.price}',
+                          'R${widget.products.productPrice}',
                           style: TextStyle(color: Colors.white),
                         ),
                       ],

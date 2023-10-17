@@ -8,22 +8,17 @@ part 'api_event.dart';
 part 'api_state.dart';
 
 class ApiProductBloc extends Bloc<ApiProductEvent, ApiProductState> {
-  ApiProductBloc() : super(ProductApiInitialState()) {
-    on<ApiProductStart>(_onApiProductStart);
+  ApiProductBloc() : super(ProductApiLoadingState()) {
     on<ApiProductFetch>(_onApiProductFetch);
   }
 }
 
-FutureOr<void> _onApiProductStart(event, Emitter<ApiProductState> emit) async {
-  emit(ProductApiInitialState());
-  try {
-    await Future<void>.delayed(const Duration(seconds: 2));
-    emit(ProductApiFetchingSuccessfulState(products: []));
-  } catch (_) {}
-}
-
 FutureOr<void> _onApiProductFetch(event, Emitter<ApiProductState> emit) async {
-  emit(ProductApiFetchingSuccessfulState(products: []));
-  List<Product> products = await ProductsAPI.fetchData();
-  emit(ProductApiFetchingSuccessfulState(products: products));
+  try {
+    List<Product> products = await ProductsAPI.fetchData();
+    print("_onApiProductFetch Debug: Length of Products = ${products.length}");
+    emit(ProductApiFetchingSuccessfulState(products: products));
+  } catch (e) {
+    emit(ProductApiErrorState(error: e as Error));
+  }
 }

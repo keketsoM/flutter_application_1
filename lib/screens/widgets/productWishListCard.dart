@@ -3,19 +3,24 @@ import 'package:flutter_application_1/model/models.dart';
 import 'package:flutter_application_1/route_mananger/route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ProductWishListCard extends StatelessWidget {
+class ProductWishListCard extends StatefulWidget {
   const ProductWishListCard(
       {super.key, required this.product, this.isWishList = false});
   final Product product;
   final bool isWishList;
 
   @override
+  State<ProductWishListCard> createState() => _ProductWishListCardState();
+}
+
+class _ProductWishListCardState extends State<ProductWishListCard> {
+  @override
   Widget build(BuildContext context) {
     final double widthValue = MediaQuery.of(context).size.width / 2.5;
     return InkWell(
       onTap: () {
         Navigator.of(context)
-            .pushNamed(Routemanger.thirdPage, arguments: product);
+            .pushNamed(Routemanger.thirdPage, arguments: widget.product);
       },
       child: Row(
         children: [
@@ -29,13 +34,13 @@ class ProductWishListCard extends StatelessWidget {
                     child: Row(
                       children: [
                         Image.network(
-                          product.imageUrl,
+                          widget.product.imageLink,
                           fit: BoxFit.cover,
                         ),
                         Padding(
                           padding: const EdgeInsets.all(15),
                           child: Text(
-                            '${product.productName}\n${product.price}',
+                            '${widget.product.productName}\n${widget.product.productPrice}',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -65,10 +70,10 @@ class ProductWishListCard extends StatelessWidget {
                         onPressed: () {
                           context
                               .read<CartBloc>()
-                              .add(CartProductAdded(product));
+                              .add(CartProductAdded(widget.product));
                           context
                               .read<WishListBloc>()
-                              .add(RemoveWishListProduct(product));
+                              .add(RemoveWishListProduct(widget.product));
                           final snackBar =
                               SnackBar(content: Text('item add to the cart!'));
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -79,7 +84,7 @@ class ProductWishListCard extends StatelessWidget {
                   ),
                 ),
               ),
-              isWishList
+              widget.isWishList
                   ? Positioned(
                       bottom: 5,
                       right: 60,
@@ -89,9 +94,8 @@ class ProductWishListCard extends StatelessWidget {
                           builder: (context, state) {
                             return IconButton(
                               onPressed: () {
-                                context
-                                    .read<WishListBloc>()
-                                    .add(RemoveWishListProduct(product!));
+                                context.read<WishListBloc>().add(
+                                    RemoveWishListProduct(widget.product!));
 
                                 final snackBar = SnackBar(
                                     content:
