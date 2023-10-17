@@ -7,7 +7,12 @@ abstract class ApiProductEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class ApiProductStarted extends ApiProductEvent {
+class ApiProductStart extends ApiProductEvent {
+  @override
+  List<Object> get props => [];
+}
+
+class ApiProductFetch extends ApiProductEvent {
   @override
   List<Object> get props => [];
 }

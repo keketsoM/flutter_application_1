@@ -8,7 +8,6 @@ export 'chat_messages.dart';
 export 'common_widgets.dart';
 export 'customAppbar.dart';
 export 'drawer.dart';
-export 'homePage.dart';
 export 'message_bubble.dart';
 export 'new_message.dart';
 export 'productRow.dart';

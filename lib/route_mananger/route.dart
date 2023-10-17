@@ -30,11 +30,11 @@ class Routemanger {
         return MaterialPageRoute(
           builder: (context) => const HomePage(),
         );
-      case secondPage:
-        return MaterialPageRoute(
-          builder: (context) =>
-              CategoryScreen(categories: settings.arguments as Category),
-        );
+      // case secondPage:
+      //   return MaterialPageRoute(
+      //     builder: (context) =>
+      //      //   CategoryScreen(categories: settings.arguments as Category),
+      //   );
       case thirdPage:
         return MaterialPageRoute(
           builder: (context) => ProductDetailScreen(

@@ -56,7 +56,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ],
-      title: Text("TRADE HUB"),
+      title: Center(child: const Text("Student Fest")),
     );
   }
 

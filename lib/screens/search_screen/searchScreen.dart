@@ -36,7 +36,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    //filteredItem = Product.products.toList();
+    // filteredItem = Product.products.toList();
     super.initState();
   }
 

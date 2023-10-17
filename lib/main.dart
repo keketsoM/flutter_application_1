@@ -45,13 +45,12 @@ class MyApp extends StatelessWidget {
                     create: (_) => WishListBloc()..add(StartWishList())),
                 BlocProvider(create: (_) => CartBloc()..add(CartStarted())),
                 BlocProvider(
-                  create: (context) =>
-                      ApiProductBloc()..add(ApiProductStarted()),
+                  create: (context) => ApiProductBloc()..add(ApiProductFetch()),
                 )
               ],
               child: const MaterialApp(
                 debugShowCheckedModeBanner: false,
-                initialRoute: Routemanger.homePage,
+                initialRoute: Routemanger.apiPage,
                 onGenerateRoute: Routemanger.generateRoute,
               ),
             );

@@ -51,7 +51,7 @@ class ProductWishListCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.blue,
                   ),
-                  child: Text('${product.discount}%'),
+                  //Text('${product.discount}%'),
                 ),
               ),
               Positioned(

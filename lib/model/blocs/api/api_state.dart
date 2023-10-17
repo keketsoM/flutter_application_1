@@ -1,24 +1,26 @@
 part of 'api_bloc.dart';
 
-sealed class ApiProductState extends Equatable {
+abstract class ApiProductState extends Equatable {
   const ApiProductState();
 
   @override
   List<Object> get props => [];
 }
 
-final class ProductApiInitial extends ApiProductState {}
+class ProductApiInitialState extends ApiProductState {}
 
-final class ProductApiFetchingSuccessful extends ApiProductState {
+class ProductApiLoadingState extends ApiProductState {}
+
+class ProductApiFetchingSuccessfulState extends ApiProductState {
   final List<Product> products;
-  const ProductApiFetchingSuccessful({required this.products});
+  const ProductApiFetchingSuccessfulState({
+    required this.products,
+  });
+  @override
+  List<Object> get props => [products];
+}
 
+class ProductApiErrorState extends ApiProductState {
   @override
   List<Object> get props => [];
-
-  // final WishList wishList;
-
-  // const WishListLoaded({this.wishList = const WishList()});
-  // @override
-  // List<Object> get props => [wishList];
 }

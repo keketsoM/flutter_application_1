@@ -81,16 +81,16 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const SectionTitle(title: "Recommended"),
-          ProductRow(
-            products: Product.products
-                .where((product) => product.isRecommended)
-                .toList(),
-          ),
+          // ProductRow(
+          // products: Product.products
+          //     .where((product) => product.isRecommended)
+          //     .toList(),
+          // ),
           const SectionTitle(title: "Most Popular"),
-          ProductRow(
-            products:
-                Product.products.where((product) => product.isPopular).toList(),
-          ),
+          // ProductRow(
+          //   products:
+          //       Product.products.where((product) => product.isPopular).toList(),
+          // ),
         ],
       ),
       bottomNavigationBar: BottomNavBar(),
