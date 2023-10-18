@@ -23,7 +23,7 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       imageLink: json['imageLink'] as String,
       productPrice: (json['productPrice'] as num).toDouble(),
       isPopular: json['isPopular'] as bool,
-      isRecommmened: json['isRecommmened'] as bool,
+      isRecommened: json['isRecommened'] as bool,
       discount: (json['discount'] as num).toDouble(),
     );
 
@@ -42,7 +42,7 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
       'dateCreated': instance.dateCreated,
       'discount': instance.discount,
       'isPopular': instance.isPopular,
-      'isRecommmened': instance.isRecommmened,
+      'isRecommened': instance.isRecommened,
       'vendorId': instance.vendorId,
       'vendor': instance.vendor,
       'orders': instance.orders,

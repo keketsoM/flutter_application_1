@@ -28,8 +28,9 @@ class _TestApiState extends State<TestApi> {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Text(state.products[index].productDescription!),
+                      Text(state.products[index].productDescription),
                       Image.network(state.products[index].imageLink),
+                      Text(state.services[index].serviceName),
                     ],
                   );
                 },

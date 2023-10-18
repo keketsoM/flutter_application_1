@@ -19,7 +19,7 @@ class Product extends Equatable {
   final String dateCreated;
   final double discount;
   final bool isPopular;
-  final bool isRecommmened;
+  final bool isRecommened;
   final int vendorId;
   final String? vendor;
   final String? orders;
@@ -41,7 +41,7 @@ class Product extends Equatable {
       required this.imageLink,
       required this.productPrice,
       required this.isPopular,
-      required this.isRecommmened,
+      required this.isRecommened,
       required this.discount});
   @override
   // TODO: implement props
@@ -62,7 +62,7 @@ class Product extends Equatable {
         imageLink,
         productPrice,
         isPopular,
-        isRecommmened,
+        isRecommened,
         discount
       ];
 

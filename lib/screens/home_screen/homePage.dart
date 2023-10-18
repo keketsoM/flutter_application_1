@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                 const SectionTitle(title: "Recommended"),
                 ProductRow(
                   products: state.products
-                      .where((products) => products.isRecommmened)
+                      .where((products) => products.isRecommened)
                       .toList(),
                 ),
                 const SectionTitle(title: "Most Popular"),
