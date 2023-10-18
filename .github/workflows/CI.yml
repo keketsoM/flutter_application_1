@@ -4,7 +4,8 @@ name: CI
 on:
   # Triggers on pull or push request
   push:
-    branches: [master]
+    branches:
+      - "**"
     paths-ignore:
       - '**/*.md'
   
