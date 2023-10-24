@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/models.dart';
+import 'package:flutter_application_1/model/services.dart';
 import 'package:flutter_application_1/route_mananger/route.dart';
+import 'package:flutter_application_1/screens/Cardsearch.dart';
+import 'package:flutter_application_1/screens/services_card.dart';
 import 'package:flutter_application_1/screens/widgets/bottomNavBar.dart';
 import 'package:flutter_application_1/screens/widgets/drawer.dart';
 import 'package:flutter_application_1/screens/widgets/product_card.dart';
@@ -16,17 +19,27 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  List<Product> filteredItem = [];
+  List<Product> products = [];
+  List<Services> services = [];
+  List<dynamic> filteredItem = [];
+  // List<Services>
+
   void filterItem(String keyword) {
     setState(
       () {
         if (keyword.isEmpty) {
-          Text("no iteam found");
+          const Center(child: Text("No iteam found"));
         } else {
-          // filteredItem = Product.products
-          //     .where((element) =>
-          //         element.name.toLowerCase().contains(keyword.toLowerCase()))
-          //     .toList();
+          filteredItem = services
+              .where((element) => element.serviceName
+                  .toLowerCase()
+                  .contains(keyword.toLowerCase()))
+              .toList();
+          filteredItem = products
+              .where((element) => element.productName
+                  .toLowerCase()
+                  .contains(keyword.toLowerCase()))
+              .toList();
         }
       },
     );
@@ -36,7 +49,8 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    // filteredItem = Product.products.toList();
+    filteredItem = products.toList();
+    filteredItem = services.toList();
     super.initState();
   }
 
@@ -105,6 +119,8 @@ class _SearchScreenState extends State<SearchScreen> {
           );
         }
         if (state is ProductApiFetchingSuccessfulState) {
+          products = state.products;
+          services = state.services;
           return GridView.builder(
             padding: const EdgeInsets.symmetric(
               vertical: 16.0,
@@ -119,11 +135,19 @@ class _SearchScreenState extends State<SearchScreen> {
                   padding: const EdgeInsets.only(
                     bottom: 20,
                   ),
-                  child: ProductCard(
-                    product: filteredItem[index],
-                    widthfactor: 2.5,
-                    index: index,
-                    state: state,
+                  child: Column(
+                    children: [
+                      ServicesCard(
+                          service: filteredItem[index] as Services,
+                          index: index,
+                          state: state),
+                      // CardSearch(
+                      //   product: filteredItem[index],
+                      //   widthfactor: 2.5,
+                      //   index: index,
+                      //   state: state,
+                      // ),
+                    ],
                   ),
                 ),
               );

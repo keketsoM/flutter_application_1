@@ -4,8 +4,8 @@ import 'package:flutter_application_1/model/product.dart';
 
 import 'package:flutter_application_1/route_mananger/route.dart';
 
-class ProductCard extends StatefulWidget {
-  const ProductCard(
+class CardSearch extends StatefulWidget {
+  const CardSearch(
       {super.key,
       required this.product,
       required this.index,
@@ -13,17 +13,17 @@ class ProductCard extends StatefulWidget {
       this.widthfactor = 2.5,
       this.leftPostion = 5});
 
-  final Product product;
+  final dynamic product;
   final double widthfactor;
   final double leftPostion;
   final ProductApiFetchingSuccessfulState state;
   final int index;
 
   @override
-  State<ProductCard> createState() => _ProductCardState();
+  State<CardSearch> createState() => _CardSearchState();
 }
 
-class _ProductCardState extends State<ProductCard> {
+class _CardSearchState extends State<CardSearch> {
   String nameLimiter(String name) {
     if (name.length > 10) {
       return name.substring(0, 20);

@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/models.dart';
+import 'package:flutter_application_1/screens/services_row.dart';
 import 'package:flutter_application_1/screens/widgets/common_widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,12 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    context.read<ApiProductBloc>().add(ApiProductFetch());
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                 const SectionTitle(title: "Recommended"),
                 ProductRow(
                   products: state.products
-                      .where((products) => products.isRecommened)
+                      .where((products) => products.isRecommend)
                       .toList(),
                 ),
                 const SectionTitle(title: "Most Popular"),
@@ -107,6 +102,8 @@ class _HomePageState extends State<HomePage> {
                       .where((products) => products.isPopular)
                       .toList(),
                 ),
+                const SectionTitle(title: "Services"),
+                ServicesRow(services: state.services),
               ],
             );
           } else {

@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/models.dart';
-import 'package:flutter_application_1/model/product.dart';
 
-import 'package:flutter_application_1/screens/widgets/product_card.dart';
+import 'package:flutter_application_1/model/services.dart';
+import 'package:flutter_application_1/screens/services_card.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ProductRow extends StatefulWidget {
-  List<Product> products;
+class ServicesRow extends StatefulWidget {
+  List<Services> services;
 
-  ProductRow({
+  ServicesRow({
     super.key,
-    required this.products,
+    required this.services,
   });
 
   @override
-  State<ProductRow> createState() => _ProductRowState();
+  State<ServicesRow> createState() => _ProductRowState();
 }
 
-class _ProductRowState extends State<ProductRow> {
+class _ProductRowState extends State<ServicesRow> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,18 +31,18 @@ class _ProductRowState extends State<ProductRow> {
             );
           }
           if (state is ProductApiFetchingSuccessfulState) {
-            widget.products = state.products;
+            widget.services = state.services;
             return ListView.builder(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemCount: state.products.length,
+              itemCount: state.services.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: ProductCard(
+                  child: ServicesCard(
                     index: index,
                     state: state,
-                    product: widget.products[index],
+                    service: widget.services[index],
                     widthfactor: 2.5,
                   ),
                 );

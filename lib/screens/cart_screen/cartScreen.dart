@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_application_1/model/models.dart';
 import 'package:flutter_application_1/route_mananger/route.dart';
 import 'package:flutter_application_1/screens/widgets/common_widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CartList extends StatefulWidget {
   const CartList({super.key});

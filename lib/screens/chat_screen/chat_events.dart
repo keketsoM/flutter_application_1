@@ -4,7 +4,7 @@ import 'package:flutter_application_1/model/blocs/api/api_bloc.dart';
 import 'package:flutter_application_1/screens/chat_screen/chat.dart';
 import 'package:flutter_application_1/screens/event/event.dart';
 import 'package:flutter_application_1/route_mananger/route.dart';
-import 'package:flutter_application_1/screens/services.dart';
+import 'package:flutter_application_1/screens/service_screen/services.dart';
 import 'package:flutter_application_1/screens/widgets/common_widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -46,8 +46,8 @@ class _MainPageState extends State<MainPage> {
               return TabBarView(children: [
                 ChatScreen(),
                 ServiceScreen(
-                  services: state.services,
                   state: state,
+                  event: state.events,
                 ),
               ]);
             } else {

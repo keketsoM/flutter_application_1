@@ -12,8 +12,7 @@ class ProductsAPI {
     final client = HttpClient()
       ..badCertificateCallback = (cert, host, port) => true;
     try {
-      var url =
-          Uri.https("10.0.2.2:7006", "/api/ProductApiController/GetProducts");
+      var url = Uri.https("10.0.2.2:7006", "/studentFest/products");
       var request = await client.getUrl(url);
       var response = await request.close();
 

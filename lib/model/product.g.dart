@@ -16,15 +16,16 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       dateCreated: json['dateCreated'] as String,
       vendorId: json['vendorId'] as int,
       vendor: json['vendor'] as String?,
-      orders: json['orders'] as String?,
+      orderItems: json['orderItems'] as String?,
       productName: json['productName'] as String,
       productCategory: json['productCategory'] as String,
       productDescription: json['productDescription'] as String,
       imageLink: json['imageLink'] as String,
       productPrice: (json['productPrice'] as num).toDouble(),
       isPopular: json['isPopular'] as bool,
-      isRecommened: json['isRecommened'] as bool,
+      isRecommend: json['isRecommend'] as bool,
       discount: (json['discount'] as num).toDouble(),
+      cartItems: json['cartItems'] as String?,
     );
 
 Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
@@ -42,8 +43,9 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
       'dateCreated': instance.dateCreated,
       'discount': instance.discount,
       'isPopular': instance.isPopular,
-      'isRecommened': instance.isRecommened,
+      'isRecommend': instance.isRecommend,
       'vendorId': instance.vendorId,
       'vendor': instance.vendor,
-      'orders': instance.orders,
+      'orderItems': instance.orderItems,
+      'cartItems': instance.cartItems,
     };

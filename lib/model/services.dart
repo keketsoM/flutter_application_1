@@ -1,8 +1,12 @@
 import 'package:equatable/equatable.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'services.g.dart';
+
+@JsonSerializable()
 class Services extends Equatable {
   final int id;
-  final String serviceImageUrl;
+  final String imageUrl;
   final String serviceDescription;
   final String serviceName;
   final int vendorId;
@@ -10,7 +14,7 @@ class Services extends Equatable {
 
   Services({
     required this.id,
-    required this.serviceImageUrl,
+    required this.imageUrl,
     required this.serviceDescription,
     required this.serviceName,
     required this.vendorId,
@@ -21,28 +25,15 @@ class Services extends Equatable {
   // TODO: implement props
   List<Object?> get props => [
         id,
-        serviceImageUrl,
+        imageUrl,
         serviceDescription,
         serviceName,
         vendorId,
         vendor ?? "No vender",
       ];
 
-  factory Services.fromJson(Map<String, dynamic> json) => Services(
-        id: json["id"],
-        serviceImageUrl: json["serviceImageUrl"],
-        serviceDescription: json["serviceDescription"],
-        serviceName: json["serviceName"],
-        vendorId: json["vendorId"],
-        vendor: json["vendor"],
-      );
+  factory Services.fromJson(Map<String, dynamic> json) =>
+      _$ServicesFromJson(json);
 
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "serviceImageUrl": serviceImageUrl,
-        "serviceDescription": serviceDescription,
-        "serviceName": serviceName,
-        "vendorId": vendorId,
-        "vendor": vendor,
-      };
+  Map<String, dynamic> toJson() => _$ServicesToJson(this);
 }

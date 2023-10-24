@@ -15,7 +15,6 @@ class WishListBloc extends Bloc<wishListEvent, WishListState> {
   }
 
   FutureOr<void> _onStartWishList(event, Emitter<WishListState> emit) async {
-    final state = this.state;
     emit(WishListLoading());
     try {
       await Future<void>.delayed(const Duration(seconds: 1));

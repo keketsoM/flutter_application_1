@@ -19,30 +19,33 @@ class Product extends Equatable {
   final String dateCreated;
   final double discount;
   final bool isPopular;
-  final bool isRecommened;
+  final bool isRecommend;
   final int vendorId;
   final String? vendor;
-  final String? orders;
+  final String? orderItems;
+  final String? cartItems;
 
-  Product(
-      {required this.id,
-      required this.productBrand,
-      required this.productType,
-      required this.productCount,
-      required this.warranty,
-      required this.boxItems,
-      required this.dateCreated,
-      required this.vendorId,
-      required this.vendor,
-      required this.orders,
-      required this.productName,
-      required this.productCategory,
-      required this.productDescription,
-      required this.imageLink,
-      required this.productPrice,
-      required this.isPopular,
-      required this.isRecommened,
-      required this.discount});
+  Product({
+    required this.id,
+    required this.productBrand,
+    required this.productType,
+    required this.productCount,
+    required this.warranty,
+    required this.boxItems,
+    required this.dateCreated,
+    required this.vendorId,
+    required this.vendor,
+    required this.orderItems,
+    required this.productName,
+    required this.productCategory,
+    required this.productDescription,
+    required this.imageLink,
+    required this.productPrice,
+    required this.isPopular,
+    required this.isRecommend,
+    required this.discount,
+    required this.cartItems,
+  });
   @override
   // TODO: implement props
   List<Object> get props => [
@@ -55,15 +58,16 @@ class Product extends Equatable {
         dateCreated,
         vendorId,
         vendor ?? "No Vendor",
-        orders ?? "No Orders",
+        orderItems ?? "No Orders",
         productName,
         productCategory,
         productDescription,
         imageLink,
         productPrice,
         isPopular,
-        isRecommened,
-        discount
+        isRecommend,
+        discount,
+        cartItems ?? "No CartItems",
       ];
 
   factory Product.fromJson(Map<String, dynamic> json) =>

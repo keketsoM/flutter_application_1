@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/blocs/api/api_bloc.dart';
-import 'package:flutter_application_1/model/services.dart';
+import 'package:flutter_application_1/model/events.dart';
 import 'package:flutter_application_1/screens/widgets/bottomNavBar.dart';
 
 class ServiceScreen extends StatelessWidget {
-  const ServiceScreen({super.key, required this.services, required this.state});
-  final List<Services> services;
+  const ServiceScreen({super.key, required this.event, required this.state});
+  final List<Events> event;
   final ProductApiFetchingSuccessfulState state;
   @override
   Widget build(BuildContext context) {
@@ -27,22 +27,21 @@ class ServiceScreen extends StatelessWidget {
                         child: Container(
                           width: MediaQuery.of(context).size.width,
                           height: 200,
-                          child: state.services[index].serviceImageUrl == null
+                          child: state.events[index].imgUrl.isEmpty
                               ? const Center(child: Text("No Image"))
-                              : Image.network(
-                                  state.services[index].serviceImageUrl),
+                              : Image.network(state.events[index].imgUrl),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 15),
-                        child: Text(state.services[index].serviceName),
+                        child: Text(state.events[index].eventName),
                       ),
                       ExpansionTile(
                         iconColor: Colors.black,
                         textColor: Colors.black,
                         title: Text("Services Information"),
                         children: [
-                          Text(state.services[index].serviceDescription),
+                          Text(state.events[index].decription),
                         ],
                       ),
                     ],

@@ -17,7 +17,7 @@ class Category extends Equatable {
     const Category(
       name: "Phone",
       imageUrl:
-          'https://thefoschini.vtexassets.com/arquivos/ids/91013519-800-800?v=638327268540200000&width=800&height=800&aspect=true',
+          'https://media.takealot.com/covers_images/0a20ae1b995f4ee8a5ccfbcfc8621218/s-zoom.file',
     ),
     const Category(
       name: "Fragrance",
@@ -30,14 +30,14 @@ class Category extends Equatable {
           'https://media.takealot.com/covers_images/ace7f49dc08849a89fb33149662eb309/s-zoom.file',
     ),
     const Category(
-      name: "Laptop",
+      name: "Laptops",
       imageUrl:
           'https://media.takealot.com/covers_images/129d0967c13a469fad090debcf27b690/s-zoom.file',
     ),
     const Category(
       name: "Watch",
       imageUrl:
-          'https://thefoschini.vtexassets.com/arquivos/ids/68468651-800-800?v=638265768839400000&width=800&height=800&aspect=true',
+          'https://media.takealot.com/covers_images/20ae31c6175b4016a63757b07caf8367/s-zoom.file',
     )
   ];
 }

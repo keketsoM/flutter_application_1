@@ -12,10 +12,11 @@ class ProductApiLoadingState extends ApiProductState {}
 class ProductApiFetchingSuccessfulState extends ApiProductState {
   final List<Product> products;
   final List<Services> services;
+  final List<Events> events;
   const ProductApiFetchingSuccessfulState(
-      {required this.products, required this.services});
+      {required this.products, required this.services, required this.events});
   @override
-  List<Object> get props => [products, services];
+  List<Object> get props => [products, services, events];
 }
 
 class ProductApiErrorState extends ApiProductState {

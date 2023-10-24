@@ -13,9 +13,9 @@
 // class _CategoryScreenState extends State<CategoryScreen> {
 //   @override
 //   Widget build(BuildContext context) {
-//     // final List<Product> productCategory = Product.products
-//     //     .where((products) => products.category == widget.categories.name)
-//     //     .toList();
+//     final List<Category> productCategory = Category.categories
+//         .where((products) => products.category == widget.categories.name)
+//         .toList();
 //     return Scaffold(
 //       appBar: AppBar(
 //         title: Text(widget.categories.name),
@@ -27,14 +27,14 @@
 //         ),
 //         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
 //             crossAxisCount: 2, childAspectRatio: 1),
-//       //  itemCount: productCategory.length,
-//        itemBuilder: (context, index) {
+//         //  itemCount: productCategory.length,
+//         itemBuilder: (context, index) {
 //           return Center(
 //             child: Padding(
 //               padding: const EdgeInsets.only(bottom: 20),
 //               child: ProductCard(
-//                 product: //productCategory[index],
-//                // widthfactor: 2.5,
+//                 product: productCategory[index],
+//                 widthfactor: 2.5,
 //               ),
 //             ),
 //           );
